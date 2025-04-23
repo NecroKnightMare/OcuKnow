@@ -161,7 +161,7 @@ QWidget* Quiz::buildQuizScorePage()
     } else if (percentScore >= 90) {
         colorTextGradeQuip += "A.\nCongratulations! You are now an Opthamologist Resident ready significantly participate in surgery!";
     } else if (percentScore >= 80) {
-        colorTextGradeQuip += "B.\nCongratulations! You are now an Opthamologist Resident ready to hold the sweat sponge in surgery!";
+        colorTextGradeQuip += "B.\nCongratulations! You are now an Opthamologist Fellowship ready to hold the sweat sponge in surgery!";
     } else if (percentScore >= 70) {
         colorTextGradeQuip += "C.\nCongratulations! You are now an Opthamologist Intern ready to watch surgery from the observation room!";
     } else if (percentScore >= 60) {
@@ -169,15 +169,15 @@ QWidget* Quiz::buildQuizScorePage()
     } else if (percentScore >= 50) {
         colorTextGradeQuip += "F.\nCongratulations! You get to retake your senior year!";
     } else if (percentScore >= 40) {
-        colorTextGradeQuip += "F-\nCongratulations! You get to retake all of medical school!";
+        colorTextGradeQuip += "F-.\nCongratulations! You get to retake all of medical school!";
     } else if (percentScore >= 30) {
-        colorTextGradeQuip += "F--\nCongratulations! You get to explore other medical schools!";
+        colorTextGradeQuip += "F--.\nCongratulations! You get to explore other medical schools!";
     } else if (percentScore >= 20) {
-        colorTextGradeQuip += "F---\nCongratulations! You get to explore other career options!";
+        colorTextGradeQuip += "F---.\nCongratulations! You get to explore other career options!";
     } else if (percentScore >= 10) {
-        colorTextGradeQuip += "F----\nCongratulations! You get to explore the career of junior high science teacher!";
+        colorTextGradeQuip += "F----.\nCongratulations! You get to explore the career of junior high science teacher!";
     } else if (percentScore >= 0) {
-        colorTextGradeQuip += "Zero\nCongratulations! You get to explore the career of Gym Teacher!";
+        colorTextGradeQuip += "Zero.\nCongratulations! You get to explore the career of Gym Teacher!";
     }
 
     colorText->setText(colorTextGradeQuip);
@@ -187,7 +187,7 @@ QWidget* Quiz::buildQuizScorePage()
     layout->addWidget(colorText);
     layout->addWidget(restartButton);
 
-    scoreText->setText(QString("You successfully answered %1 out of %2. That's a %3%").arg(score).arg(numQuestions).arg(percentScore));
+    scoreText->setText(QString("You successfully answered %1 out of %2. That's a %3%.").arg(score).arg(numQuestions).arg(percentScore));
     header->setAlignment(Qt::AlignCenter);
     header->setFont(headerFont);
     scoreText->setAlignment(Qt::AlignCenter);
