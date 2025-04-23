@@ -51,23 +51,25 @@ QWidget* Quiz::buildQuizSplashPage()
     QWidget *quizSplashPage = new QWidget;
 
     QLabel *splashPageHeader = new QLabel("Eye Quizlette");
-    QLabel *splashPageInstruction = new QLabel("Over the next 100 pages you will be asked to answer multiple questions on the eye.\nClick 'Start' to begin!");
-    splashPageStart = new QPushButton("Start");
+    QLabel *splashPageInstruction = new QLabel("Over the next 100 pages you will be asked to answer multiple questions on the eye.\nClick 'Start' to begin!\n");
+    splashPageStartButton = new QPushButton("Start");
 
     splashPageHeader->setAlignment(Qt::AlignCenter);
     splashPageHeader->setFont(headerFont);
     splashPageInstruction->setWordWrap(true);
     splashPageInstruction->setFont(textFont);
     splashPageInstruction->setAlignment(Qt::AlignCenter);
-    splashPageStart->setFont(textFont);
-    splashPageStart->setStyleSheet(buttonStyle);
-    splashPageStart->setMaximumSize(QSize(200, 50));
+    splashPageStartButton->setFont(textFont);
+    splashPageStartButton->setStyleSheet(buttonStyle);
+    splashPageStartButton->setMaximumSize(QSize(300, 75));
+    splashPageStartButton->setDefault(true);
 
     QVBoxLayout *splashLayout = new QVBoxLayout(quizSplashPage);
     splashLayout->addStretch();
     splashLayout->addWidget(splashPageHeader);
     splashLayout->addWidget(splashPageInstruction);
-    splashLayout->addWidget(splashPageStart);
+    splashLayout->addWidget(splashPageStartButton);
+    splashLayout->setAlignment(splashPageStartButton,Qt::AlignCenter);
     splashLayout->addStretch();
 
     return quizSplashPage;
@@ -186,6 +188,7 @@ QWidget* Quiz::buildQuizScorePage()
     layout->addWidget(scoreText);
     layout->addWidget(colorText);
     layout->addWidget(restartButton);
+    layout->setAlignment(restartButton, Qt::AlignCenter);
 
     scoreText->setText(QString("You successfully answered %1 out of %2. That's a %3%.").arg(score).arg(numQuestions).arg(percentScore));
     header->setAlignment(Qt::AlignCenter);
@@ -198,6 +201,8 @@ QWidget* Quiz::buildQuizScorePage()
     colorText->setWordWrap(true);
 
     restartButton->setStyleSheet(buttonStyle);
+    restartButton->setDefault(true);
+    restartButton->setMaximumSize(QSize(300,75));
 
     QObject::connect(restartButton, &QPushButton::clicked, this, &Quiz::runQuiz);
 
@@ -243,7 +248,7 @@ void Quiz::runQuiz() {
     centralWidget->setLayout(mainLayout);
     setCentralWidget(centralWidget);
 
-    connect(splashPageStart, &QPushButton::clicked, this, &Quiz::onStartButtonClicked);
+    connect(splashPageStartButton, &QPushButton::clicked, this, &Quiz::onStartButtonClicked);
 }
 
 Quiz::Quiz(QWidget *parent) : QMainWindow(parent) {
