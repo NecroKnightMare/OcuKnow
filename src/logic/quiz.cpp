@@ -2,7 +2,7 @@
 
 QFont headerFont("Orbitron", 24, QFont::Bold);
 QFont questionFont("Orbitron", 18, QFont::Normal);
-QFont textFont("Orbitron", 12, QFont::Normal);
+QFont textFont("Orbitron", 14, QFont::Normal);
 
 QString buttonStyle = R"(
 QPushButton {
@@ -61,6 +61,7 @@ QWidget* Quiz::buildQuizSplashPage()
     splashPageInstruction->setAlignment(Qt::AlignCenter);
     splashPageStart->setFont(textFont);
     splashPageStart->setStyleSheet(buttonStyle);
+    splashPageStart->setMaximumSize(QSize(200, 50));
 
     QVBoxLayout *splashLayout = new QVBoxLayout(quizSplashPage);
     splashLayout->addStretch();
@@ -149,18 +150,52 @@ QWidget* Quiz::buildQuizScorePage()
     QVBoxLayout *layout = new QVBoxLayout(scorePage);
     QLabel *header = new QLabel("Quiz Final Score");
     QLabel *scoreText = new QLabel();
+    QLabel *colorText = new QLabel("That earned you a grade of ");
+    QString colorTextGradeQuip = colorText->text();
     QPushButton *restartButton = new QPushButton("Restart Quiz");
+    int percentScore = static_cast<int>(std::round((double)score / (double)numQuestions * 100.0));
+    // QString *letterGrade = new QString();
+
+    if (percentScore == 100) {
+        colorTextGradeQuip += "A+.\nCongratulations! You are now an Opthalmologist Attending ready to conduct eye transplants!";
+    } else if (percentScore >= 90) {
+        colorTextGradeQuip += "A.\nCongratulations! You are now an Opthamologist Resident ready significantly participate in surgery!";
+    } else if (percentScore >= 80) {
+        colorTextGradeQuip += "B.\nCongratulations! You are now an Opthamologist Resident ready to hold the sweat sponge in surgery!";
+    } else if (percentScore >= 70) {
+        colorTextGradeQuip += "C.\nCongratulations! You are now an Opthamologist Intern ready to watch surgery from the observation room!";
+    } else if (percentScore >= 60) {
+        colorTextGradeQuip += "D.\nCongratulations! You graduated without prospects, but 'D' is for Diploma!";
+    } else if (percentScore >= 50) {
+        colorTextGradeQuip += "F.\nCongratulations! You get to retake your senior year!";
+    } else if (percentScore >= 40) {
+        colorTextGradeQuip += "F-\nCongratulations! You get to retake all of medical school!";
+    } else if (percentScore >= 30) {
+        colorTextGradeQuip += "F--\nCongratulations! You get to explore other medical schools!";
+    } else if (percentScore >= 20) {
+        colorTextGradeQuip += "F---\nCongratulations! You get to explore other career options!";
+    } else if (percentScore >= 10) {
+        colorTextGradeQuip += "F----\nCongratulations! You get to explore the career of junior high science teacher!";
+    } else if (percentScore >= 0) {
+        colorTextGradeQuip += "Zero\nCongratulations! You get to explore the career of Gym Teacher!";
+    }
+
+    colorText->setText(colorTextGradeQuip);
 
     layout->addWidget(header);
     layout->addWidget(scoreText);
+    layout->addWidget(colorText);
     layout->addWidget(restartButton);
 
-    scoreText->setText(QString("You successfully answered %1 out of %2!").arg(score).arg(numQuestions));
+    scoreText->setText(QString("You successfully answered %1 out of %2. That's a %3%").arg(score).arg(numQuestions).arg(percentScore));
     header->setAlignment(Qt::AlignCenter);
     header->setFont(headerFont);
     scoreText->setAlignment(Qt::AlignCenter);
     scoreText->setFont(textFont);
     scoreText->setWordWrap(true);
+    colorText->setAlignment(Qt::AlignCenter);
+    colorText->setFont(textFont);
+    colorText->setWordWrap(true);
 
     restartButton->setStyleSheet(buttonStyle);
 
