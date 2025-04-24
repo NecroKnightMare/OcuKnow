@@ -36,6 +36,7 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
     qt_add_executable(OcuKnow # Changed "Quiz" to "OcuKnow" to match your project
         MANUAL_FINALIZATION
         ${PROJECT_SOURCES}
+        UI/studyguide/eye_model.cpp UI/studyguide/eye_model.h UI/studyguide/eyemodel.ui
     )
     # Define target properties for Android with Qt 6 as:
     #    set_property(TARGET OcuKnow APPEND PROPERTY QT_ANDROID_PACKAGE_SOURCE_DIR

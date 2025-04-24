@@ -1,3 +1,4 @@
+// eye_model.h
 #ifndef EYE_MODEL_H
 #define EYE_MODEL_H
 
@@ -10,9 +11,14 @@
 #include <QVBoxLayout>
 #include <QMediaPlayer>
 #include <QWindow>
+#include <QDialog>
 
+// Forward declaration
+namespace Ui {
+class Dialog;  // Match the class name in the UI file
+}
 
-class Eye_model : public QWindow
+class Eye_model : public QDialog
 {
     Q_OBJECT
 public:
@@ -24,6 +30,8 @@ private slots:
     void insertItalicText();
     void insertUnderlinedText();
 
+private:
+    Ui::Dialog *ui;  // Match the UI class name
 };
 
 #endif
