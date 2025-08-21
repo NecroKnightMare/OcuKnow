@@ -303,7 +303,7 @@ Lens</string>
     <cursorShape>PointingHandCursor</cursorShape>
    </property>
    <property name="acceptDrops">
-    <bool>true</bool>
+    <bool></bool>
    </property>
    <property name="accessibleDescription">
     <string/>
