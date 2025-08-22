@@ -1,3 +1,5 @@
+<img width="1000" alt="OcuKnow banner" src="https://github.com/user-attachments/assets/f6c3dc91-f785-469f-ad0e-1b19a4b0acf4" />
+
 # OcuKnow
 
 ### *OcuKnow* is an interactive educational application built with Qt and C++. It allows medical students to explore a virtual model of the human eye, including a study guide and interactive quiz mode. Designed for clarity and accessibility, OcuKnow is ideal for students studying anatomy or preparing for exams.
@@ -10,10 +12,10 @@
 - [Installation](#installation)
 - [File Descriptions](#file-descriptions)
 - [Usage](#usage)
-- [Study Guide](#study-guide)
-- [Quiz Mode](#quiz-mode)
+  - [Study Guide](#study-guide)
+  - [Quiz Mode](#quiz-mode)
 - [Key Features](#key-features)
-- [Known Issues](#known-issues)
+- [Challenges](#challenges)
 - [Authors](#authors)
 - [License](#license)
 
@@ -81,13 +83,13 @@ Upon launch, you'll see the animated splash screen with three options:
 
 ---
 
-## Study Guide
+### Study Guide
 
 The Study Guide is a visual UI created using Qt Designer and provides an interactive model of the eye. Users can explore different anatomical parts of the eye using mouse-over or buttons. A labeled diagram helps users visualize the information.
 
 ---
 
-## Quiz Mode
+### Quiz Mode
 
 Clicking "Take Quiz" starts a multiple-choice quiz based on `questions.txt`. It includes:
 
@@ -110,9 +112,22 @@ Clicking "Take Quiz" starts a multiple-choice quiz based on `questions.txt`. It 
 
 <img width="792" height="451" alt="Screenshot 2025-04-21 135342" src="https://github.com/user-attachments/assets/c8f24497-8a67-4f67-8b4c-2e47c95950d6" />
 
-<img width="600" height="200" alt="OcuKnow banner" src="https://github.com/user-attachments/assets/f6c3dc91-f785-469f-ad0e-1b19a4b0acf4" />
+---
 
+## Challenges
 
+Building OcuKnow came with its fair share of hurdles. Getting the interactive diagram of the human
+eye to feel both accurate and easy to use was one of the biggest ones — it had to look good, but
+also clearly teach something at a glance. Working with Qt meant learning how to juggle layouts,
+signals, and event handling so the app responded smoothly when users clicked or hovered over
+different parts of the diagram.
+
+Another challenge was keeping the code organized as new pieces like the splash screen, main menu,
+and interactive features were added. It was easy for things to get messy, so planning ahead and
+keeping the project modular was really important. Performance also came up — making sure the
+graphics and overlays ran smoothly on different systems took extra polish. And on top of the
+technical side, it was always a balancing act to simplify complex biology into something clear,
+engaging, and not overwhelming.
 
 ---
 
@@ -123,19 +138,30 @@ Clicking "Take Quiz" starts a multiple-choice quiz based on `questions.txt`. It 
   [LinkedIn](https://www.linkedin.com/in/arielnkm369)  
   [Email](alexandrea.ariel@gmail.com)
 
+	Ariel Lopez womp womp womp
+
 - **Stephen Newby**  
   [GitHub](https://github.com/TheSnewby/)  
   [LinkedIn](https://www.linkedin.com/in/stephenjnewby/)  
   [Email](stephen.j.newby@gmail.com)
+
+	Stephen Newby blah blah blah
 
 - **Nash Thames**  
   [GitHub](https://github.com/internashionalist)  
   [LinkedIn](https://www.linkedin.com/in/nashthames/)  
   [Email](taylor.thames@atlasschool.com)
 
+	Nash Thames is an aspiring software developer with a strong foundation in computer science,
+	including advanced algorithms, systems programming, and Linux environments. 
+	He is passionate about problem-solving and dedicated to developing reliable, efficient, and
+	well-architected software. He is engaged in continuous learning and is interested in
+	contributing to research or projects that explore the intersection of software engineering,
+	distributed systems, and emerging technologies.
+
 ---
 
 ## License
 
-This project is released under the Public Domain. Free to use, modify, and distribute.
+This project is released under the Public Domain - free to use, modify, and distribute.
 
