@@ -129,6 +129,8 @@ graphics and overlays ran smoothly on different systems took extra polish. And o
 technical side, it was always a balancing act to simplify complex biology into something clear,
 engaging, and not overwhelming.
 
+Currently it is running but not showing the study portion for the eye. Continued progress will be made to ensure it runs at 100 percent.
+
 ---
 
 ## Authors
@@ -138,7 +140,7 @@ engaging, and not overwhelming.
   [LinkedIn](https://www.linkedin.com/in/arielnkm369)  
   [Email](alexandrea.ariel@gmail.com)
 
-	Ariel Lopez womp womp womp
+	Ariel Lopez has an innovative mind and a passion to make lives better with technology. She has a strong background in Systems programming, Linux, Data science, Data Lakes, Algorithms and Blockchaining. If there is an opportunity to create something better she makes due progress to the best of her abilities.
 
 - **Stephen Newby**  
   [GitHub](https://github.com/TheSnewby/)  
